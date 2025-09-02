@@ -1,0 +1,239 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP - Triops Contracting Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Setup --- */
+        :root {
+            --background-color: #3D3D3D;
+            --text-color: #EAEAEA;
+            --primary-accent: #00BFFF; /* Deep Sky Blue */
+            --secondary-accent: #4A4A4A;
+            --border-color: #5A5A5A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--primary-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--primary-accent);
+            color: var(--background-color);
+        }
+
+        /* --- Page Content --- */
+        .page-content {
+            display: none; /* Hidden by default */
+            padding-top: 40px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page-content.active {
+            display: block; /* Shown when active */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-accent);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #B0B0B0;
+        }
+        
+        /* --- Widget Styling (for Dashboard) --- */
+        .widget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .widget {
+            background-color: var(--secondary-accent);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .widget h3 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="#" class="logo">TC<span>P</span></a>
+                <nav class="nav-links">
+                    <a class="nav-link active" data-page="dashboard">Dashboard</a>
+                    <a class="nav-link" data-page="calendar">Calendar</a>
+                    <a class="nav-link" data-page="archives">Archives</a>
+                    <a class="nav-link" data-page="profile">Profile</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="dashboard" class="page-content active">
+            <h1>Dashboard</h1>
+            <p>Aggregated view of public tenders and scoring metrics.</p>
+            <div class="widget-grid">
+                <div class="widget">
+                    <h3>New Tender Opportunities</h3>
+                    <p>3 new tenders matching your profile were found in the last 24 hours.</p>
+                </div>
+                <div class="widget">
+                    <h3>Success Score Projection</h3>
+                    <p>Your projected success score for "Project Alpha" is <strong>87%</strong>.</p>
+                </div>
+                <div class="widget">
+                    <h3>Upcoming Deadlines</h3>
+                    <p>Tender #1024 submission due in <strong>3 days</strong>.</p>
+                </div>
+                <div class="widget">
+                    <h3>Market Activity</h3>
+                    <p>Increased activity in the infrastructure sector this week.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="calendar" class="page-content">
+            <h1>Calendar</h1>
+            <p>Track important dates, submission deadlines, and meetings.</p>
+            <div class="widget">
+                <h3>September 2025</h3>
+                <p>Content for the calendar will be displayed here. Integration with Google Calendar or Outlook is planned.</p>
+            </div>
+        </section>
+
+        <section id="archives" class="page-content">
+            <h1>Archives</h1>
+            <p>Review past tenders, submissions, and outcomes.</p>
+             <div class="widget-grid">
+                <div class="widget">
+                    <h3>Project Omega (Won)</h3>
+                    <p>Submitted: 15/06/2025. Final Score: 92%.</p>
+                </div>
+                <div class="widget">
+                    <h3>Initiative Gamma (Lost)</h3>
+                    <p>Submitted: 02/05/2025. Final Score: 78%.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="page-content">
+            <h1>Profile</h1>
+            <p>Manage your company's information and platform settings.</p>
+            <div class="widget">
+                <h3>Company Details</h3>
+                <p><strong>Name:</strong> Your SME Name</p>
+                <p><strong>Focus Area:</strong> Public Infrastructure</p>
+                <p><strong>Subscription:</strong> Pro Tier</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageContents = document.querySelectorAll('.page-content');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetPage = link.getAttribute('data-page');
+
+                    // Update active link
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // Update active page content
+                    pageContents.forEach(page => {
+                        if (page.id === targetPage) {
+                            page.classList.add('active');
+                        } else {
+                            page.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
