@@ -15,7 +15,6 @@
             --primary-accent: #889870; /* Highlight and Hover */
             --secondary-accent: #4A4A4A;
             --border-color: #5A5A5A;
-            --hover-text-color: #3D3D3D;
         }
 
         * {
@@ -73,13 +72,14 @@
             font-weight: 500;
             padding: 5px 10px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: transparent; /* Ensure background is transparent */
+            transition: color 0.3s ease; /* Only transition the color */
             cursor: pointer;
         }
 
+        /* MODIFIED RULE: Only the text color changes on hover/active */
         .nav-link:hover, .nav-link.active {
-            background-color: var(--primary-accent);
-            color: var(--hover-text-color);
+            color: var(--primary-accent);
         }
 
         /* --- Page Content --- */
