@@ -8,6 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* --- CUSTOM FONTS --- */
+        @font-face {
+          font-family: 'Triops Sora Medium';
+          src: url('https://raw.githubusercontent.com/Ramare41/3ops.tech/main/assets/fonts/sora/Sora-Medium.ttf') format('truetype');
+        }
+        @font-face {
+          font-family: 'Triops Grotesk SemiBold';
+          src: url('https://raw.githubusercontent.com/Ramare41/3ops.tech/main/assets/fonts/spacegrotesk/SpaceGrotesk-SemiBold.ttf') format('truetype');
+        }
+        @font-face {
+          font-family: 'Triops Grotesk Regular';
+          src: url('https://raw.githubusercontent.com/Ramare41/3ops.tech/main/assets/fonts/spacegrotesk/SpaceGrotesk-Regular.ttf') format('truetype');
+        }
+
         /* --- General Styling & Setup --- */
         :root {
             --background-color: #1F2124;
@@ -28,7 +42,7 @@
         body {
             background-color: var(--background-color);
             color: var(--text-color);
-            font-family: 'Sora', sans-serif;
+            font-family: 'Triops Grotesk Regular', sans-serif; /* Default to paragraph font */
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -56,6 +70,7 @@
         }
         
         h1 {
+            font-family: 'Triops Sora Medium', sans-serif; /* H1 Font */
             font-size: 3.5rem;
             background: -webkit-linear-gradient(45deg, #FFFFFF, #B0B0B0);
             -webkit-background-clip: text;
@@ -64,6 +79,10 @@
             color: transparent;
         }
 
+        h2, h3 {
+            font-family: 'Triops Grotesk SemiBold', sans-serif; /* H2 & H3 Font */
+        }
+        
         h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -75,31 +94,28 @@
         }
 
         p {
+            font-family: 'Triops Grotesk Regular', sans-serif; /* Paragraph Font */
             color: var(--text-secondary-color);
             margin-bottom: 20px;
         }
         
-        /* MODIFICATION: Removed border-bottom, will apply specific borders where needed */
         section {
-            /* border-bottom: 1px solid var(--border-color); */
         }
         
-        /* MODIFICATION: Added border-top to sections following the hero for separation */
         main section + section:not(.section-alternate-bg) {
             border-top: 1px solid var(--border-color);
         }
 
-        /* MODIFICATION: Borders removed for alternate background sections */
         .section-alternate-bg {
             background-color: var(--background-alternate);
             border-radius: 8px;
-            border: none; /* Removed all borders for a clean look with radius */
-            margin-top: 20px; /* Added a small margin to separate from previous section */
-            margin-bottom: 20px; /* Added a small margin to separate from next section */
-            padding-top: 60px; /* Adjusted padding within the section */
+            border: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-top: 60px;
             padding-bottom: 60px;
         }
-        /* Ensure the container inside still has its padding */
+
         .section-alternate-bg .container {
              padding-top: 0;
              padding-bottom: 0;
@@ -115,6 +131,7 @@
         }
 
         .logo {
+            font-family: 'Triops Grotesk SemiBold', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
         }
@@ -122,6 +139,7 @@
         .nav-links {
             display: flex;
             gap: 25px;
+            font-family: 'Triops Grotesk Regular', sans-serif;
         }
         
         /* --- Hero Section --- */
@@ -148,6 +166,7 @@
             border-radius: 5px;
             border: 1px solid var(--border-color);
             transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Triops Grotesk SemiBold', sans-serif;
         }
 
         .cta-button:hover {
@@ -229,6 +248,7 @@
         }
         
         .footer-column h4 {
+            font-family: 'Triops Grotesk SemiBold', sans-serif;
             font-size: 1rem;
             margin-bottom: 15px;
             color: var(--text-color);
@@ -269,7 +289,7 @@
             h2 { font-size: 2rem; }
             .header { flex-direction: column; gap: 15px; }
             .nav-links { display: none; }
-            .container { padding: 60px 15px; } /* Adjust padding for small screens */
+            .container { padding: 60px 15px; }
             .section-alternate-bg {
                 margin-top: 15px;
                 margin-bottom: 15px;
