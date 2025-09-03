@@ -8,236 +8,233 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-    /* --- General Styling & Setup --- */
-    :root {
-        --background-color: #101010;
-        --text-color: #FFFFFF;
-        --text-secondary-color: #B0B0B0;
-        --accent-color: #EDEDED;
-        --border-color: #333333;
-        --card-background: #1C1C1C;
-    }
+        /* --- General Styling & Setup --- */
+        :root {
+            /* MODIFICATION: Background color updated */
+            --background-color: #3D3D3D;
+            --text-color: #FFFFFF;
+            --text-secondary-color: #B0B0B0;
+            --accent-color: #EDEDED;
+            --border-color: #5A5A5A; /* Slightly lightened for better contrast */
+            --card-background: #1C1C1C;
+        }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        background-color: var(--background-color);
-        color: var(--text-color);
-        font-family: 'Sora', sans-serif;
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Sora', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 80px 20px;
-    }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
 
-    a {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-    }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
 
-    a:hover {
-        opacity: 0.8;
-    }
+        a:hover {
+            opacity: 0.8;
+        }
 
-    h1, h2, h3 {
-        font-weight: 600;
-        line-height: 1.2;
-    }
-    
-    /* MODIFICATION: Gradient added to H1 */
-    h1 {
-        font-size: 3.5rem;
-        background: -webkit-linear-gradient(45deg, #FFFFFF, #B0B0B0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-    }
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            background: -webkit-linear-gradient(45deg, #FFFFFF, #B0B0B0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
 
-    h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
-    
-    h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-    p {
-        color: var(--text-secondary-color);
-        margin-bottom: 20px;
-    }
-    
-    section {
-        border-bottom: 1px solid var(--border-color);
-    }
+        p {
+            color: var(--text-secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        section {
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    /* --- Header & Navigation --- */
-    .header {
-        padding: 20px 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--border-color);
-    }
+        /* --- Header & Navigation --- */
+        .header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 25px;
-    }
-    
-    /* --- Hero Section --- */
-    .hero {
-        text-align: center;
-    }
-    
-    .hero h1 {
-        margin-bottom: 20px;
-    }
-    
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 0 auto 30px auto;
-    }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+        }
+        
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
 
-    .cta-button {
-        display: inline-block;
-        background-color: var(--accent-color);
-        color: var(--background-color);
-        padding: 12px 25px;
-        font-weight: 600;
-        border-radius: 5px;
-    }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #3D3D3D; /* Changed to match new background */
+            padding: 12px 25px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
 
-    /* --- Platforms Section --- */
-    .platforms-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-top: 40px;
-    }
+        /* --- Platforms Section --- */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
 
-    .platform-item h3 {
-        font-size: 1.2rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 10px;
-    }
-    
-    .platform-item p {
-        font-size: 1rem;
-    }
+        .platform-item h3 {
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .platform-item p {
+            font-size: 1rem;
+        }
 
-    /* --- Cards Section --- */
-    .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
+        /* --- Cards Section --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-    /* MODIFICATION: Transition added for hover effect */
-    .card {
-        background-color: var(--card-background);
-        padding: 30px;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
+        .card {
+            background-color: var(--card-background);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
 
-    /* MODIFICATION: Hover effect added for cards */
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-        border-color: var(--text-secondary-color);
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--text-secondary-color);
+        }
 
-    .card .card-heading {
-        font-size: 0.9rem;
-        color: var(--text-secondary-color);
-        margin-bottom: 15px;
-    }
+        .card .card-heading {
+            font-size: 0.9rem;
+            color: var(--text-secondary-color);
+            margin-bottom: 15px;
+        }
 
-    /* --- Demo Section --- */
-    .demo-section {
-        text-align: center;
-        border-bottom: none;
-    }
+        /* --- Demo Section --- */
+        .demo-section {
+            text-align: center;
+            border-bottom: none;
+        }
 
-    /* --- Footer --- */
-    .footer {
-        background-color: #000;
-        padding: 60px 5%;
-    }
+        /* --- Footer --- */
+        .footer {
+            background-color: #000;
+            padding: 60px 5%;
+        }
 
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 40px;
-        margin-bottom: 40px;
-    }
-    
-    .footer-column h4 {
-        font-size: 1rem;
-        margin-bottom: 15px;
-        color: var(--text-color);
-    }
-    
-    .footer-column ul {
-        list-style: none;
-    }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
 
-    .footer-column ul li a {
-        color: var(--text-secondary-color);
-        font-size: 0.9rem;
-        display: block;
-        padding: 5px 0;
-    }
-    
-    .footer-bottom {
-        text-align: center;
-        color: var(--text-secondary-color);
-        font-size: 0.9rem;
-    }
+        .footer-column ul li a {
+            color: var(--text-secondary-color);
+            font-size: 0.9rem;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-secondary-color);
+            font-size: 0.9rem;
+        }
 
-    /* MODIFICATION: Animation styles added */
-    /* --- Animations & Effects --- */
-    .fade-in-section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
+        /* --- Animations & Effects --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-    .fade-in-section.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* --- Responsive Design --- */
-    @media (max-width: 768px) {
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; }
-        .header { flex-direction: column; gap: 15px; }
-        .nav-links { display: none; /* Simple hide for now */ }
-    }
-</style>
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .header { flex-direction: column; gap: 15px; }
+            .nav-links { display: none; /* Simple hide for now */ }
+        }
+    </style>
 </head>
 <body>
 
@@ -252,13 +249,13 @@
     </header>
 
     <main>
-        <section class="container hero">
+        <section class="container hero fade-in-section">
             <h1>From Data to Decision</h1>
             <p>Harnessing complexity with speed and precision</p>
             <a href="#" class="cta-button">Explore TCP now</a>
         </section>
 
-        <section class="container">
+        <section class="container fade-in-section">
             <h2>Platforms</h2>
             <div class="platforms-grid">
                 <div class="platform-item">
@@ -289,12 +286,12 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container fade-in-section">
             <h2>Triops platforms are engineered for impact</h2>
             <div class="cards-grid">
                 <div class="card">
                     <p class="card-heading">—— A</p>
-                    <h3>End to End Intelligence Ecosystem</h3>
+                    <h3>End-to-End Intelligence Ecosystem</h3>
                     <p>Our five-platform ecosystem offers end-to-end services, from government contracting to strategic defense intelligence.</p>
                 </div>
                 <div class="card">
@@ -320,7 +317,7 @@
             </div>
         </section>
 
-        <section class="container demo-section">
+        <section class="container demo-section fade-in-section">
             <h2>Request a demo</h2>
             <p>Partnered with Europe's leading AI and defense innovators.</p>
             <a href="#" class="cta-button">Get Started</a>
@@ -370,9 +367,10 @@
             <p>© 2025 Triops Technologies SAS. All rights reserved.</p>
         </div>
     </footer>
+
     <script>
-        const sections = document.querySelectorAll('section');
-    
+        const sections = document.querySelectorAll('.fade-in-section');
+
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -382,9 +380,13 @@
         }, {
             threshold: 0.1
         });
-    
+
         sections.forEach(section => {
-            section.classList.add('fade-in-section');
+            // The class is now added directly in the HTML, so this line is not strictly needed
+            // but is kept for robustness in case you add new sections dynamically.
+            if (!section.classList.contains('fade-in-section')) {
+                 section.classList.add('fade-in-section');
+            }
             observer.observe(section);
         });
     </script>
