@@ -46,6 +46,7 @@
             font-family: 'Triops Grotesk Regular', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 75px; /* MODIFICATION: Prevents content from hiding behind fixed header */
         }
 
         .container {
@@ -129,13 +130,19 @@
 
         /* --- Header & Navigation --- */
         .header {
+            position: fixed; /* MODIFICATION: Makes header fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(31, 33, 36, 0.5); /* MODIFICATION: 50% transparent background */
+            backdrop-filter: blur(10px); /* Optional: Adds a nice glass effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
             padding: 20px 2%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
-            position: relative;
-            z-index: 10;
+            z-index: 1000;
         }
 
         .logo {
@@ -161,7 +168,7 @@
         
         /* --- Hero Section --- */
         .hero {
-            min-height: 90vh;
+            min-height: calc(90vh - 75px); /* MODIFICATION: Adjust height to account for body padding */
             display: flex;
             flex-direction: column;
             justify-content: center;
