@@ -43,7 +43,7 @@
         body {
             background-color: var(--background-color);
             color: var(--text-color);
-            font-family: 'Triops Grotesk Regular', sans-serif; /* Default to paragraph font */
+            font-family: 'Triops Grotesk Regular', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -71,7 +71,7 @@
         }
         
         h1 {
-            font-family: 'Triops Sora Medium', sans-serif; /* H1 Font */
+            font-family: 'Triops Sora Medium', sans-serif;
             font-size: 4rem;
             background: -webkit-linear-gradient(45deg, #FFFFFF, #B0B0B0);
             -webkit-background-clip: text;
@@ -81,7 +81,7 @@
         }
 
         h2, h3, h4 {
-            font-family: 'Triops Grotesk SemiBold', sans-serif; /* H2, H3 & H4 Font */
+            font-family: 'Triops Grotesk SemiBold', sans-serif;
         }
         
         h2 {
@@ -100,7 +100,7 @@
         }
 
         p {
-            font-family: 'Triops Grotesk Regular', sans-serif; /* Paragraph Font */
+            font-family: 'Triops Grotesk Regular', sans-serif;
             color: var(--text-secondary-color);
             margin-bottom: 20px;
         }
@@ -160,6 +160,24 @@
         /* --- Hero Section --- */
         .hero {
             text-align: center;
+            min-height: 90vh; /* MODIFICATION: Increased height */
+            display: flex; /* Added for vertical centering */
+            flex-direction: column; /* Added for vertical centering */
+            justify-content: center; /* Added for vertical centering */
+            align-items: center; /* Added for horizontal centering of content */
+            padding-top: 0; /* Remove top padding if header is fixed */
+            padding-bottom: 0; /* Remove bottom padding */
+        }
+
+        /* Adjust hero content within container to account for new flexbox on .hero */
+        .hero > .container {
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* Allows content to take available space */
         }
         
         .hero h1 {
