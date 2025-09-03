@@ -33,7 +33,6 @@
             overflow-x: hidden;
         }
 
-        /* MODIFICATION: Width increased to reduce side margins */
         .container {
             width: 94%;
             max-width: 1200px;
@@ -80,19 +79,35 @@
             margin-bottom: 20px;
         }
         
+        /* MODIFICATION: Removed border-bottom, will apply specific borders where needed */
         section {
-            border-bottom: 1px solid var(--border-color);
+            /* border-bottom: 1px solid var(--border-color); */
         }
         
-        /* MODIFICATION: Border-radius added */
+        /* MODIFICATION: Added border-top to sections following the hero for separation */
+        main section + section:not(.section-alternate-bg) {
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* MODIFICATION: Borders removed for alternate background sections */
         .section-alternate-bg {
             background-color: var(--background-alternate);
             border-radius: 8px;
+            border: none; /* Removed all borders for a clean look with radius */
+            margin-top: 20px; /* Added a small margin to separate from previous section */
+            margin-bottom: 20px; /* Added a small margin to separate from next section */
+            padding-top: 60px; /* Adjusted padding within the section */
+            padding-bottom: 60px;
+        }
+        /* Ensure the container inside still has its padding */
+        .section-alternate-bg .container {
+             padding-top: 0;
+             padding-bottom: 0;
         }
 
         /* --- Header & Navigation --- */
         .header {
-            padding: 20px 3%; /* Adjusted to match new container width */
+            padding: 20px 3%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -196,7 +211,7 @@
         /* --- Footer --- */
         .footer {
             background-color: var(--background-color);
-            padding: 60px 3%; /* Adjusted to match new container width */
+            padding: 60px 3%;
             border-top: 1px solid var(--border-color);
         }
 
@@ -207,7 +222,7 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 40px;
             margin-bottom: 40px;
-            width: 94%; /* Match container width */
+            width: 94%;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
@@ -253,7 +268,19 @@
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             .header { flex-direction: column; gap: 15px; }
-            .nav-links { display: none; /* Simple hide for now */ }
+            .nav-links { display: none; }
+            .container { padding: 60px 15px; } /* Adjust padding for small screens */
+            .section-alternate-bg {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .platforms-grid, .cards-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
     </style>
