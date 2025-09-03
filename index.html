@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,7 +122,6 @@
             margin: 0 auto 30px auto;
         }
 
-        /* MODIFICATION: Button style updated */
         .cta-button {
             display: inline-block;
             background-color: #3D3D3D;
@@ -136,7 +136,7 @@
         .cta-button:hover {
             background-color: var(--accent-color);
             color: #101010;
-            opacity: 1; /* Override the general link hover */
+            opacity: 1;
         }
 
         /* --- Platforms Section --- */
@@ -188,12 +188,14 @@
         .demo-section {
             text-align: center;
             border-bottom: none;
+            margin-bottom: 80px; /* MODIFICATION: Margin added */
         }
 
         /* --- Footer --- */
         .footer {
-            background-color: #000;
+            background-color: var(--background-color); /* MODIFICATION: Color updated */
             padding: 60px 5%;
+            border-top: 1px solid var(--border-color); /* Added for visual separation */
         }
 
         .footer-grid {
