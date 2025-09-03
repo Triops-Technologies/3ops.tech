@@ -48,7 +48,6 @@
             overflow-x: hidden;
         }
 
-        /* MODIFICATION: Width increased to reduce side margins */
         .container {
             width: 96%;
             max-width: 1200px;
@@ -130,7 +129,7 @@
 
         /* --- Header & Navigation --- */
         .header {
-            padding: 20px 2%; /* Adjusted to match new container width */
+            padding: 20px 2%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -279,7 +278,7 @@
         /* --- Footer --- */
         .footer {
             background-color: var(--background-color);
-            padding: 60px 2%; /* Adjusted to match new container width */
+            padding: 60px 2%;
             border-top: 1px solid var(--border-color);
         }
 
@@ -290,7 +289,7 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 40px;
             margin-bottom: 40px;
-            width: 96%; /* Match container width */
+            width: 96%;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
@@ -314,10 +313,16 @@
             padding: 5px 0;
         }
         
+        /* MODIFICATION: Copyright text updated */
         .footer-bottom {
-            text-align: center;
+            text-align: left;
+            font-style: italic;
             color: var(--text-secondary-color);
             font-size: 0.9rem;
+            width: 96%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* --- Animations & Effects --- */
@@ -480,7 +485,7 @@
                 <h4>Documents</h4>
                 <ul>
                     <li><a href="#">Privacy and Security</a></li>
-                    <li><a href="#">Legal notices</a></li>
+                    <li><a href="#">Legal Notices</a></li>
                     <li><a href="#">Human Rights Policy</a></li>
                     <li><a href="#">Sustainability</a></li>
                 </ul>
