@@ -134,6 +134,8 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
+            position: relative; /* Ensure header is above pseudo-element */
+            z-index: 10; /* Keep header on top */
         }
 
         .logo {
@@ -160,14 +162,35 @@
         /* --- Hero Section --- */
         .hero {
             text-align: center;
-            min-height: 90vh; /* MODIFICATION: Increased height */
-            display: flex; /* Added for vertical centering */
-            flex-direction: column; /* Added for vertical centering */
-            justify-content: center; /* Added for vertical centering */
-            align-items: center; /* Added for horizontal centering of content */
-            padding-top: 0; /* Remove top padding if header is fixed */
-            padding-bottom: 0; /* Remove bottom padding */
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0;
+            padding-bottom: 0;
+            position: relative; /* Needed for pseudo-element positioning */
+            overflow: hidden; /* Ensures blur doesn't bleed out */
+            background-color: var(--background-color); /* Fallback in case image fails to load */
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://raw.githubusercontent.com/Ramare41/3ops.tech/main/assets/images/pics/pexels-cookiecutter-1148820.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(4px); /* Adjust blur strength as needed */
+            opacity: 0.3; /* Adjust opacity as needed (0.0 to 1.0) */
+            z-index: -1; /* Puts the pseudo-element behind the content */
+            transform: scale(1.02); /* Counteract blur shrinking edges slightly */
+        }
+
 
         /* Adjust hero content within container to account for new flexbox on .hero */
         .hero > .container {
@@ -177,7 +200,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-grow: 1; /* Allows content to take available space */
+            flex-grow: 1;
+            position: relative; /* Ensure content is above pseudo-element */
+            z-index: 1;
         }
         
         .hero h1 {
