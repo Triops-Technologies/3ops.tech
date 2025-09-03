@@ -7,6 +7,10 @@
     <style>
         /* --- CUSTOM FONTS --- */
         @font-face {
+          font-family: 'Triops Title Font';
+          src: url('https://raw.githubusercontent.com/Ramare41/3ops.tech/main/assets/fonts/spacegrotesk/SpaceGrotesk-Light.ttf') format('truetype');
+        }
+        @font-face {
           font-family: 'Triops Sora Medium';
           src: url('https://raw.githubusercontent.com/Ramare41/3ops.tech/main/assets/fonts/sora/Sora-Medium.ttf') format('truetype');
         }
@@ -90,7 +94,7 @@
             margin-bottom: 10px;
         }
 
-          h4 {
+        h4 {
             font-size: 1.2rem;
             margin-bottom: 10px;
         }
@@ -133,9 +137,18 @@
         }
 
         .logo {
-            font-family: 'Triops Grotesk SemiBold', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Triops Title Font', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
         }
 
         .nav-links {
@@ -310,7 +323,10 @@
 <body>
 
     <header class="header">
-        <a href="https://3ops.tech" class="logo" target="_blank" rel="noopener noreferrer">TRIOPS</a>
+        <a href="https://3ops.tech" class="logo" target="_blank" rel="noopener noreferrer">
+            <img src="https://raw.githubusercontent.com/Ramare41/3ops.tech/main/assets/images/logos/Logo%20website%20cropped.png" alt="Triops Logo">
+            <span>TRIOPS</span>
+        </a>
         <nav class="nav-links">
             <a href="#">Platforms</a>
             <a href="#">Offerings</a>
