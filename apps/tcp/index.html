@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP - Triops Contracting Platform</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="container">
+            <nav class="app-nav">
+                <a href="#" class="app-nav-link active" data-page="dashboard">Dashboard</a>
+                <a href="#" class="app-nav-link" data-page="calendar">Calendar</a>
+                <a href="#" class="app-nav-link" data-page="archives">Archives</a>
+                <a href="#" class="app-nav-link" data-page="profile">Profile</a>
+            </nav>
+
+            <div class="app-content">
+                <section id="dashboard" class="page-content active fade-in-section">
+                    <h1>Dashboard</h1>
+                    [cite_start]<p>Aggregated view of public tenders and scoring metrics. [cite: 3]</p>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <h3>New Tender Opportunities</h3>
+                            [cite_start]<p>3 new tenders matching your profile were found in the last 24 hours. [cite: 3]</p>
+                        </div>
+                        <div class="card">
+                            <h3>Success Score Projection</h3>
+                            [cite_start]<p>Your projected success score for "Project Alpha" is <strong>87%</strong>. [cite: 3]</p>
+                        </div>
+                        <div class="card">
+                            <h3>Upcoming Deadlines</h3>
+                            [cite_start]<p>Tender #1024 submission due in <strong>3 days</strong>. [cite: 3]</p>
+                        </div>
+                        <div class="card">
+                            <h3>Market Activity</h3>
+                            [cite_start]<p>Increased activity in the infrastructure sector this week. [cite: 3]</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="calendar" class="page-content fade-in-section">
+                    <h1>Calendar</h1>
+                    <p>Track important dates, submission deadlines, and meetings.</p>
+                </section>
+
+                <section id="archives" class="page-content fade-in-section">
+                    <h1>Archives</h1>
+                    <p>Review past tenders, submissions, and outcomes.</p>
+                </section>
+
+                <section id="profile" class="page-content fade-in-section">
+                    <h1>Profile</h1>
+                    <p>Manage your company's information and platform settings.</p>
+                </section>
+            </div>
+        </div>
+        </main>
+    
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Fetch and insert the header
+        fetch('../../header.html') // MODIFICATION: Path adjusted
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        // Fetch and insert the footer
+        fetch('../../footer.html') // MODIFICATION: Path adjusted
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Main animation and app navigation script
+        setTimeout(() => {
+            // Fade-in animation for sections
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // App page navigation logic
+            const navLinks = document.querySelectorAll('.app-nav-link');
+            const pageContents = document.querySelectorAll('.page-content');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent page jump
+                    const targetPage = link.getAttribute('data-page');
+
+                    // Update active link
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // Update active page content
+                    pageContents.forEach(page => {
+                        if (page.id === targetPage) {
+                            page.classList.add('active');
+                        } else {
+                            page.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+        }, 100);
+    </script>
+</body>
+</html>
