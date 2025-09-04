@@ -425,29 +425,14 @@ main section + section:not(.section-alternate-bg) {
     }
 }
 
-/* --- Rights List Styling --- */
-.rights-list {
-    list-style: none; /* Removes default bullet points */
-    padding: 0;
+/* --- Simple List Styling --- */
+.simple-list {
+    list-style: disc; /* Ensures standard bullet points */
+    padding-left: 25px; /* Standard indentation for lists */
     margin: 20px 0;
-    columns: 2; /* Creates two columns on wider screens */
-    column-gap: 40px;
-}
-
-.rights-list li {
-    margin-bottom: 10px;
     color: var(--text-secondary-color);
 }
 
-.rights-list li::before {
-    content: '↳'; /* Adds the arrow for consistency */
-    margin-right: 10px;
-    color: var(--text-color);
-}
-
-/* On smaller screens, go back to a single column */
-@media (max-width: 768px) {
-    .rights-list {
-        columns: 1;
-    }
+.simple-list li {
+    margin-bottom: 8px; /* Adds a bit of space between items */
 }
