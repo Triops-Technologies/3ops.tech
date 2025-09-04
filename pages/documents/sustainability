@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triops Technologies - Privacy & Security</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+    </main>
+    
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Fetch and insert the header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        // Fetch and insert the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Animation script (needs to be here to find sections after content loads)
+        // A slight delay to ensure content is in the DOM before observing
+        setTimeout(() => {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }, 100); // 100ms delay
+    </script>
+</body>
+</html>
