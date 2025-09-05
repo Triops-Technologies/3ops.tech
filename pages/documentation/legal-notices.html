@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triops Technologies - Legal Notices</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Page Title - Triops Technologies</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
 
@@ -65,26 +65,26 @@
             <h2>Legal notices’ updates</h2>
             <p>Triops Technologies reserves the right to modify and update access to the site, as well as these legal notices, at any time. These modifications and updates are binding on the user, who must therefore regularly refer to the French version of this section to check the general conditions in force.</p>
         </section>
-    </main>
+        </main>
     
     <div id="footer-placeholder"></div>
 
     <script>
         // Fetch and insert the header
-        fetch('header.html')
+        fetch('../header.html') // PATHS UPDATED
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
 
         // Fetch and insert the footer
-        fetch('footer.html')
+        fetch('../footer.html') // PATHS UPDATED
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             });
-
-        // Animation script (needs to be here to find sections after content loads)
+        
+        // This animation script can stay the same
         setTimeout(() => {
             const sections = document.querySelectorAll('.fade-in-section');
             const observer = new IntersectionObserver(entries => {
