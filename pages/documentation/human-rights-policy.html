@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Human Rights Policy - Triops Technologies</title>
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../../style.css"> 
 </head>
 <body>
 
     <div id="header-placeholder"></div>
 
     <main>
-         <section class="container fade-in-section">
+        <section class="container fade-in-section">
             <h1>Human Rights Policy</h1>
             
             <h2>Purpose</h2>
@@ -69,20 +69,22 @@
             <p>As an external, impacted party, you can report human rights concerns via: humanrights@3ops.tech.</p>
             <p>Triops commits to reviewing the validity of human rights concerns and, where appropriate, taking subsequent action to mitigate adverse human rights impacts.</p>
         </section>
-        </main>
+    </main>
     
     <div id="footer-placeholder"></div>
 
     <script>
         // Fetch and insert the header
-        fetch('../header.html') // PATHS UPDATED
+        // Corrected Path: ../../ goes up two levels
+        fetch('../../header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
 
         // Fetch and insert the footer
-        fetch('../footer.html') // PATHS UPDATED
+        // Corrected Path: ../../ goes up two levels
+        fetch('../../footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
