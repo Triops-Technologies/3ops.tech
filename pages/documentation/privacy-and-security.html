@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy & Security - Triops Technologies</title>
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../../style.css"> 
 </head>
 <body>
 
     <div id="header-placeholder"></div>
 
     <main>
-        <section class="container fade-in-section">
+      <section class="container fade-in-section">
             <h1>Privacy & Security</h1>
             <h2>Foreword</h2>
             <p>At Triops Technologies, we recognise the critical importance of data protection in today's digital landscape. Inspired by pioneering efforts in data privacy, we've developed a robust approach to safeguarding personal information that goes beyond mere compliance with regulations like GDPR. As a technology company, we're committed to integrating cutting-edge protection measures into our services, fostering a culture of respect for data privacy. Our privacy policy reflects our dedication to preserving your fundamental rights and freedoms, acknowledging that behind every piece of data lies a unique individual deserving of protection.</p>
@@ -87,20 +87,22 @@
             <h2>Contact</h2>
             <p>Whether you are a candidate, employee (or former employee) or third party, for any additional information or to assert your rights, do not hesitate to send an email to our DPO: data@3ops.tech.</p>
         </section>
-        </main>
+    </main>
     
     <div id="footer-placeholder"></div>
 
     <script>
         // Fetch and insert the header
-        fetch('../header.html') // PATHS UPDATED
+        // Corrected Path: ../../ goes up two levels
+        fetch('../../header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
 
         // Fetch and insert the footer
-        fetch('../footer.html') // PATHS UPDATED
+        // Corrected Path: ../../ goes up two levels
+        fetch('../../footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
